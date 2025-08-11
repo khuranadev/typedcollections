@@ -1,0 +1,10 @@
+pyproject.toml
+setup.cfg
+setup.py
+typedcollections/__init__.py
+typedcollections/exceptions.py
+typedcollections/typedlist.py
+typedcollections.egg-info/PKG-INFO
+typedcollections.egg-info/SOURCES.txt
+typedcollections.egg-info/dependency_links.txt
+typedcollections.egg-info/top_level.txt

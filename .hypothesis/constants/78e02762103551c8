@@ -1,0 +1,4 @@
+# file: C:\Users\KIIT\Desktop\typedcollections\typedcollections\typedlist.py
+# hypothesis_version: 6.137.1
+
+['(', ')', ', ', 'T', 'TypedList', 'TypedList[T]']
