@@ -62,14 +62,14 @@ class TypedList(MutableSequence, Generic[T]):
         # built-in coercion
         if isinstance(self.dtype, type):
             try:
-                return self.dtype(value)  # type: ignore
+                return self.dtype(value)
             except Exception as exc:
                 raise CoercionError(f"Could not coerce {value!r} to {self._dtype_names()}") from exc
 
         last_exc = None
         for typ in self.dtype:
             try:
-                return typ(value)  # type: ignore
+                return typ(value)  
             except Exception as exc:
                 last_exc = exc
         raise CoercionError(f"Could not coerce {value!r} to any of {self._dtype_names()}") from last_exc
@@ -77,7 +77,7 @@ class TypedList(MutableSequence, Generic[T]):
     def _validate_value(self, value: Any) -> T:
         """Validate (and coerce if allowed) and run validator if present."""
         if isinstance(value, self.dtype):
-            val: T = value  # type: ignore
+            val: T = value  
         elif not self.strict:
             val = self._try_coerce(value)
         else:
@@ -231,4 +231,3 @@ class TypedList(MutableSequence, Generic[T]):
 
     def __rmul__(self, n: int) -> "TypedList[T]":
         return self.__mul__(n)
-    
